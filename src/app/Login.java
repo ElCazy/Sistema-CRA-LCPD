@@ -26,7 +26,11 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setForeground(Color.yellow);
         jLabel2.setForeground(Color.yellow);
         jLabel3.setForeground(Color.yellow);
-        jLabel4.setForeground(Color.yellow);
+        //Configuramos el labelBoton (por defecto)
+        labelBoton.setBackground(Color.yellow);
+        labelBoton.setForeground(Color.blue);
+        /*Aqui no creamos el Border porque lo hicimos en el "Design" y tambien
+        porque no sabia como crearlo de cero :P*/
     }
 
     /**
@@ -44,7 +48,7 @@ public class Login extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
+        labelBoton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,8 +65,18 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setText("Entrar");
+        labelBoton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelBoton.setText(" Entrar ");
+        labelBoton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        labelBoton.setOpaque(true);
+        labelBoton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelBotonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                labelBotonMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,7 +97,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addComponent(labelBoton)
                 .addGap(203, 203, 203))
         );
         jPanel1Layout.setVerticalGroup(
@@ -100,7 +114,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addComponent(labelBoton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -121,6 +135,22 @@ public class Login extends javax.swing.JFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void labelBotonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBotonMouseEntered
+        //Configuramos el labelBoton (si el mouse lo toca)
+        labelBoton.setBackground(Color.blue);
+        labelBoton.setForeground(Color.yellow);
+        //Borde
+        labelBoton.setBorder(new javax.swing.border.LineBorder(Color.orange, 1, true));
+    }//GEN-LAST:event_labelBotonMouseEntered
+
+    private void labelBotonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelBotonMouseExited
+        //Configuramos el labelBoton (si el mouse ya NO lo toca)
+        labelBoton.setBackground(Color.yellow);
+        labelBoton.setForeground(Color.blue);
+        //Borde
+        labelBoton.setBorder(new javax.swing.border.LineBorder(Color.white, 1, true));
+    }//GEN-LAST:event_labelBotonMouseExited
 
     /**
      * @param args the command line arguments
@@ -161,9 +191,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel labelBoton;
     // End of variables declaration//GEN-END:variables
 }
