@@ -5,6 +5,8 @@
  */
 package app;
 
+import java.awt.Color;
+
 /**
  *
  * @author santi
@@ -16,6 +18,15 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        /*Agregando diseño a la interfaz*/
+        
+        //Color de fondo
+        jPanel1.setBackground(Color.blue);
+        //Color de las letras
+        jLabel1.setForeground(Color.yellow);
+        jLabel2.setForeground(Color.yellow);
+        jLabel3.setForeground(Color.yellow);
+        jLabel4.setForeground(Color.yellow);
     }
 
     /**
@@ -90,7 +101,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -101,7 +112,7 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
